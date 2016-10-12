@@ -1,0 +1,17 @@
+*.swp
+*~
+.VimballRecord
+.netrwhist
+.plugs.local
+.plugs.local.bak
+after/
+autoload/
+backups/
+eclim/
+plugged/
+plugin/
+sessions/
+tags
+view
+yankring.txt
+spell

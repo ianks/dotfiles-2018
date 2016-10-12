@@ -1,0 +1,24 @@
+[user]
+  name = Ian Ker-Seymer
+  email = i.kerseymer@gmail.com
+  signingkey = 87DFBE93
+
+[commit]
+  gpgsign = true
+
+[github]
+  user = ianks
+
+[alias]
+  fixup = !sh -c 'git commit --fixup=$1' -
+  squash = !sh -c 'git commit --squash=$1' -
+  ri = rebase --interactive --autosquash
+
+[rebase]
+  autosquash = true
+
+[url "ssh://git@github.com/"]
+  insteadOf = https://github.com/
+
+[url "ssh://ssh@bitbucket.org/"]
+  insteadOf = https://bitbucket.org/

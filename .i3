@@ -1,0 +1,1 @@
+/home/ianks/.yadr/apps/i3

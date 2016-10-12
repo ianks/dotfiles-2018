@@ -1,0 +1,11 @@
+[Unit]
+Description=nm-applet
+After=display-manager.service NetworkManager.service
+
+[Service]
+ExecStart=/usr/bin/nm-applet --sm-disable
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=default.target

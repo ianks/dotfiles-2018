@@ -1,0 +1,120 @@
+let SessionLoad = 1
+let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
+let v:this_session=expand("<sfile>:p")
+silent only
+cd ~/Dropbox/Development/work/techstars/companies/adhawk/the-power
+if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
+  let s:wipebuf = bufnr('%')
+endif
+set shortmess=aoO
+badd +0 src/schemas/MetricDevices.ts
+badd +14 src/reducers/metricDevices.ts
+badd +16 src/actionCreators/metricDevices.ts
+badd +34 src/containers/DashboardContainer.tsx
+badd +0 src/components/dashboard/MetricDevicesComponent.tsx
+badd +0 ~/Dropbox/Development/work/techstars/companies/adhawk/the-power/src/schemas/./AdHawkFields.ts
+argglobal
+silent! argdel *
+edit src/schemas/MetricDevices.ts
+set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+wincmd _ | wincmd |
+vsplit
+2wincmd h
+wincmd w
+wincmd _ | wincmd |
+split
+1wincmd k
+wincmd w
+wincmd w
+wincmd t
+set winheight=1 winwidth=1
+exe 'vert 1resize ' . ((&columns * 64 + 87) / 174)
+exe '2resize ' . ((&lines * 24 + 19) / 39)
+exe 'vert 2resize ' . ((&columns * 107 + 87) / 174)
+exe '3resize ' . ((&lines * 12 + 19) / 39)
+exe 'vert 3resize ' . ((&columns * 107 + 87) / 174)
+exe 'vert 4resize ' . ((&columns * 1 + 87) / 174)
+argglobal
+setlocal fdm=indent
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=3
+setlocal nofen
+let s:l = 3 - ((2 * winheight(0) + 18) / 37)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+3
+normal! 033|
+wincmd w
+argglobal
+edit src/components/dashboard/MetricDevicesComponent.tsx
+setlocal fdm=indent
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=3
+setlocal nofen
+let s:l = 116 - ((14 * winheight(0) + 12) / 24)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+116
+normal! 077|
+wincmd w
+argglobal
+enew
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=3
+setlocal nofen
+wincmd w
+argglobal
+edit ~/Dropbox/Development/work/techstars/companies/adhawk/the-power/src/schemas/./AdHawkFields.ts
+setlocal fdm=indent
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=3
+setlocal nofen
+let s:l = 2 - ((1 * winheight(0) + 18) / 37)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+2
+normal! 0
+wincmd w
+2wincmd w
+exe 'vert 1resize ' . ((&columns * 64 + 87) / 174)
+exe '2resize ' . ((&lines * 24 + 19) / 39)
+exe 'vert 2resize ' . ((&columns * 107 + 87) / 174)
+exe '3resize ' . ((&lines * 12 + 19) / 39)
+exe 'vert 3resize ' . ((&columns * 107 + 87) / 174)
+exe 'vert 4resize ' . ((&columns * 1 + 87) / 174)
+tabnext 1
+if exists('s:wipebuf') && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
+  silent exe 'bwipe ' . s:wipebuf
+endif
+unlet! s:wipebuf
+set winheight=1 winwidth=20 shortmess=filnxtToOc
+let s:sx = expand("<sfile>:p:r")."x.vim"
+if file_readable(s:sx)
+  exe "source " . fnameescape(s:sx)
+endif
+let &so = s:so_save | let &siso = s:siso_save
+doautoall SessionLoadPost
+unlet SessionLoad
+" vim: set ft=vim :

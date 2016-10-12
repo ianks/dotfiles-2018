@@ -1,0 +1,82 @@
+priority 1
+
+snippet ref "Typescript declaration reference"
+/// <reference path='${1:value_name}' />
+endsnippet
+
+snippet cl "console.log"
+console.log(${1:something});
+endsnippet
+
+snippet clb "console.log.bind(console)" w
+console.log.bind(console)
+endsnippet
+
+snippet ce "console.error"
+console.error(${1:something});
+endsnippet
+
+snippet ct "console.table"
+console.table(${1:something});
+endsnippet
+
+snippet const "const"
+const ${1} = ${0}
+endsnippet
+
+snippet let "let"
+let ${1} = ${0};
+endsnippet
+
+snippet im "import"
+import ${1} from '${0}';
+endsnippet
+
+snippet cla "class"
+class ${1} {
+	${0}
+}
+endsnippet
+
+
+snippet clax " class ... extends ..."
+class ${1} extends ${2} {
+	${0}
+}
+endsnippet
+
+snippet => "arrow function"
+(${1}) => {
+	${0}
+}
+endsnippet
+
+snippet af "arrow function"
+(${1}) => {
+	${0}
+}
+endsnippet
+
+snippet sym "Symbol"
+const ${1} = Symbol('${0}');
+endsnippet
+
+snippet ed "export default"
+export default ${0}
+endsnippet
+
+snippet rr "react-redux"
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+endsnippet
+
+snippet ${ "string interpolation"
+${${1}}${0}
+endsnippet
+
+snippet rcons "React constructor"
+constructor(props: Props, context: {}) {
+  super(props, context);
+  this.state = ${1}
+}
+endsnippet
