@@ -1,5 +1,22 @@
 priority 1
 
+snippet mocha "Setup mocha boilerplate"
+declare const expect: Chai.ExpectStatic;
+
+describe('${1:class_name}', () => {
+	let sandbox: Sinon.SinonSandbox;
+
+	beforeEach(() => {
+		sandbox = sinon.sandbox.create();
+	});
+
+	afterEach(() => {
+		sandbox.restore();
+	});
+});
+endsnippet
+
+
 snippet ref "Typescript declaration reference"
 /// <reference path='${1:value_name}' />
 endsnippet
