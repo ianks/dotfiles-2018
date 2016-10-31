@@ -6,10 +6,12 @@ endif
 
 " ================ General Config ====================
 
-set number                      "Line numbers are good
-set showmode                    "Show current mode down the bottom
-set gcr=a:blinkon0              "Disable cursor blink
-set visualbell                  "No sounds
+set number                      " Line numbers are good
+set showmode                    " Show current mode down the bottom
+set gcr=a:blinkon0              " Disable cursor blink
+set visualbell                  " No sounds
+set autoread                    " Refresh files automatically
+
 
 " This makes vim act like all other editors, buffers can
 " exist in the background without being in a window.
@@ -86,6 +88,13 @@ set scrolloff=8
 
 set splitbelow
 set splitright
+
+" ================ Navigation ========================
+
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
 
 " ================ Custom Settings ========================
 

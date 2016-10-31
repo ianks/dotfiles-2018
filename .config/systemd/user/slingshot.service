@@ -1,9 +1,13 @@
 [Unit]
 Description=Slingshot
+Requires=slingshot-delayed-job.service
 
 [Service]
 Type=simple
 WorkingDirectory=/home/ianks/Dropbox/Development/work/techstars/companies/adhawk/slingshot
+Environment=RAILS_ENV=development
+Environment=QUEUE_ADAPTER=delayed_job
+Environment=RAILS_LOG_TO_STDOUT=1
 ExecStart=/usr/bin/bash -lc 'bundle exec rails server --bind 0.0.0.0'
 TimeoutSec=30
 RestartSec=15s
