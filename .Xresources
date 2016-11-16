@@ -7,7 +7,7 @@
 URxvt*termName: rxvt-unicode-256color
 
 ! Misc
-URxvt.font: xft:Source Code Pro for Powerline:medium:pixelsize=20
+URxvt.font: xft:Fira Mono for Powerline:medium:pixelsize=20
 URxvt.scrollBar: false
 URxvt.saveLines: 16384
 
