@@ -1,14 +1,13 @@
 [Unit]
 Description=sledge
-Requires=slingshot.service
 Conflicts=the-power.service
 
 [Service]
 Type=simple
 WorkingDirectory=/home/ianks/Dropbox/Development/work/techstars/companies/adhawk/the-power
-ExecStart=/usr/bin/bash -lc 'yarn run sledge'
+ExecStart=/usr/bin/bash -lc 'source /usr/share/nvm/nvm.sh && yarn run sledge'
 TimeoutSec=30
-RestartSec=15s
+RestartSec=5s
 Restart=always
 
 [Install]

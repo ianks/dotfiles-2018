@@ -1,10 +1,12 @@
 # Main mod key
 set $mod Mod4
 
+# New window border
+new_window pixel 1
+
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 font pango:Open Sans 0
-new_window normal 1 px
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -139,7 +141,6 @@ bindsym XF86AudioMute exec pulseaudio-ctl mute && killall -SIGUSR1 i3status
 
 # Make the currently focused window a scratchpad
 bindsym $mod+Shift+minus move scratchpad
-
 # Show the first scratchpad window
 bindsym $mod+minus scratchpad show
 
@@ -159,7 +160,7 @@ exec --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd
 exec --no-startup-id nitrogen --restore
 
 # No borders on edges
-hide_edge_borders both
+hide_edge_borders smart
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
@@ -176,7 +177,7 @@ bar {
 
                             #border backgr. text
          focused_workspace  #83a598 #83a598 #ebdbb2
-         active_workspace   #ebdbb2 #ebdbb2 #ebdbb2
+         active_workspace   #ebdbb2 #ebdbb2 #1d2021
          inactive_workspace #282828 #282828 #ebdbb2
          urgent_workspace   #fb4934 #fb4934 #ebdbb2
     }
@@ -185,7 +186,6 @@ bar {
 # Application window customization
 for_window [title="^Google Hangouts is sharing.*$"] floating enable
 for_window [class="TeamViewer.exe"] floating enable
-for_window [class="Tomboy"] floating enable
 for_window [class="Wine"] floating enable
 for_window [title="Steam - Update News"] floating enable
 for_window [title="TeamViewer Panel (minimized)"] floating enable, move absolute position 900 px 0 px

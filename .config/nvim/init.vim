@@ -24,6 +24,10 @@ syntax on
 " Space is your leader
 let mapleader = "\<Space>"
 
+if has('nvim')
+  set inccommand=nosplit
+endif
+
 " =============== plugs Initialization ===============
 " This loads all the plugins specified in ~/.config/nvim/plugs.vim
 " Use plugs plugin to manage all other plugins

@@ -13,7 +13,9 @@ Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-sensible'
+if !has('nvim')
+  Plug 'tpope/vim-sensible'
+endif
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
@@ -30,7 +32,7 @@ Plug 'Shougo/vimfiler.vim'
 Plug 'roman/golden-ratio'
 Plug 'bruno-/vim-man'
 Plug 'osyo-manga/unite-quickfix'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf' }
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
 Plug 'junegunn/fzf.vim'
 Plug 'kassio/neoterm'
 Plug 'tpope/vim-jdaddy'

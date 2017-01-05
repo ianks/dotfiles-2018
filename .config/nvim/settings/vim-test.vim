@@ -7,7 +7,7 @@ let test#javascript#mocha#options = {
   \ 'suite':   '--reporter dot test/**/*Test.*',
   \}
 
-nnoremap <silent> <leader>t :TestNearest<CR>
+nnoremap <silent> <leader>tn :TestNearest<CR>
 nnoremap <silent> <leader>tf :TestFile<CR>
 nnoremap <silent> <leader>ta :TestSuite<CR>
 nnoremap <silent> <leader>tl :TestLast<CR>
