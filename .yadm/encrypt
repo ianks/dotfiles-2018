@@ -1,0 +1,4 @@
+.ssh/*.{key,pub}
+.gnupg/*.gpg
+.mutt/personal
+.mutt/work
