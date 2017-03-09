@@ -1,4 +1,4 @@
-let leaders = '~/.vim/settings/leaders'
+let leaders = '~/.config/nvim/settings/leaders'
 
 let g:unite_source_menu_menus = {}
 

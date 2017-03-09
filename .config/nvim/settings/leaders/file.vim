@@ -5,6 +5,9 @@
 " File search
 nnoremap <leader>fs :Files<CR>
 
+" Tag search
+nnoremap <leader>ft :Tags<CR>
+
 " File explore
 nnoremap <leader>fe :<C-u>VimFilerSplit -force-quit<CR>
 

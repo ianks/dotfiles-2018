@@ -11,6 +11,7 @@ set showmode                    " Show current mode down the bottom
 set gcr=a:blinkon0              " Disable cursor blink
 set visualbell                  " No sounds
 set autoread                    " Refresh files automatically
+set confirm
 
 
 " This makes vim act like all other editors, buffers can

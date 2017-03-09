@@ -1,3 +1,62 @@
+### VARIABLES ###
+#################
+set $dark0_hard       #1d2021
+set $dark0            #282828
+set $dark0_soft       #32302f
+set $dark1            #3c3836
+set $dark2            #504945
+set $dark3            #665c54
+set $dark4            #7c6f64
+set $gray_245         #928374
+set $gray_244         #928374
+set $light0_hard      #f9f5d7
+set $light0           #fbf1c7
+set $light0_soft      #f2e5bc
+set $light1           #ebdbb2
+set $light2           #d5c4a1
+set $light3           #bdae93
+set $light4           #a89984
+set $bright_red       #fb4934
+set $bright_green     #b8bb26
+set $bright_yellow    #fabd2f
+set $bright_blue      #83a598
+set $bright_purple    #d3869b
+set $bright_aqua      #8ec07c
+set $bright_orange    #fe8019
+set $neutral_red      #cc241d
+set $neutral_green    #98971a
+set $neutral_yellow   #d79921
+set $neutral_blue     #458588
+set $neutral_purple   #b16286
+set $neutral_aqua     #689d6a
+set $neutral_orange   #d65d0e
+set $faded_red        #9d0006
+set $faded_green      #79740e
+set $faded_yellow     #b57614
+set $faded_blue       #076678
+set $faded_purple     #8f3f71
+set $faded_aqua       #427b58
+set $faded_orange     #af3a03
+
+
+### THEMING ###
+###############
+
+# Title bar format
+# We first set the titlebar font size to a large size to get a good padding amount.
+# We then use pango markup to force i3 to print with the desired font.
+# This gives us large titlebars with a small font. :P
+font pango:DejaVu Sans Mono 16
+for_window [class=".*"] title_format "<span font='DejaVu Sans Mono 10'>  %title</span>"
+
+
+#                       border              background         text                 indicator
+client.focused          $faded_aqua         $dark0_hard        $light4               $dark2
+client.unfocused        $dark0              $dark0             $light4               $dark2
+client.focused_inactive $dark0              $dark0             $light4               $dark2
+client.urgent           $neutral_orange     $neutral_orange    $light4               $dark2
+
+
 # Main mod key
 set $mod Mod4
 
@@ -6,22 +65,22 @@ new_window pixel 1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:Open Sans 0
+font pango: Sans 0
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec --no-startup-id termite -e zsh
+bindsym $mod+Return exec --no-startup-id urxvt
 
 # start a browser
-bindsym $mod+b exec --no-startup-id chromium
+bindsym $mod+b exec --no-startup-id firefox-aurora
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu="dmenu -i -b -p 'Arch Linux' -fn 'Open Sans:pixelsize=15' -nb '#3c3836' -nf '#d79921' -sf '#fdf6e3' -sb '#98971a'"
+bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu="dmenu -i -b -p 'Arch Linux' -fn 'Sans:pixelsize=15' -nb '#3c3836' -nf '#d79921' -sf '#fdf6e3' -sb '#98971a'"
 
 # change focus
 bindsym $mod+h focus left
@@ -61,21 +120,14 @@ bindsym $mod+c focus child
 bindsym $mod+z focus child
 
 # Screenshot
-bindsym --release $mod+x exec --no-startup-id import /tmp/latest-screenshot.png
-
-# name workspaces
-set $tag1 "1: code"
-set $tag2 "2: sound"
-set $tag3 "3: web"
-set $tag4 "4: chat"
-set $tag5 "5: other"
+bindsym --release $mod+x exec --no-startup-id scrot -s /tmp/latest-screenshot.png
 
 # switch to workspace
-bindsym $mod+1 workspace $tag1
-bindsym $mod+2 workspace $tag2
-bindsym $mod+3 workspace $tag3
-bindsym $mod+4 workspace $tag4
-bindsym $mod+5 workspace $tag5
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
 bindsym $mod+6 workspace 6
 bindsym $mod+7 workspace 7
 bindsym $mod+8 workspace 8
@@ -83,11 +135,11 @@ bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace $tag1
-bindsym $mod+Shift+2 move container to workspace $tag2
-bindsym $mod+Shift+3 move container to workspace $tag3
-bindsym $mod+Shift+4 move container to workspace $tag4
-bindsym $mod+Shift+5 move container to workspace $tag5
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+5 move container to workspace 5
 bindsym $mod+Shift+6 move container to workspace 6
 bindsym $mod+Shift+7 move container to workspace 7
 bindsym $mod+Shift+8 move container to workspace 8
@@ -118,7 +170,6 @@ bindsym $mod+r mode "resize"
 # Power control mode
 set $power_control "[l]ock log[o]ut [s]uspend [h]ibernate [r]eboot [p]oweroff"
 mode  $power_control {
-        bindsym l exec ~/.i3/i3lock.sh; mode "default"
         bindsym o exec i3-msg exit; mode "default"
         bindsym s exec systemctl suspend; mode "default"
         bindsym h exec systemctl hibernate; mode "default"
@@ -144,11 +195,7 @@ bindsym $mod+Shift+minus move scratchpad
 # Show the first scratchpad window
 bindsym $mod+minus scratchpad show
 
-# class                 border  backgr. text    indicator
-client.focused          #83a598 #83a598 #ebdbb2 #83a598
-client.unfocused        #282828 #282828 #282828 #282828
-client.focused_inactive #ebdbb2 #333333 #ebdbb2 #ebdbb2
-client.urgent           #fb4934 #fb4934 #ebdbb2 #fb4934
+
 
 # Compositor
 exec --no-startup-id compton --config ~/.config/compton.conf
@@ -164,24 +211,26 @@ hide_edge_borders smart
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-    # status_command ~/.i3/i3status_wrapper.sh
-    status_command i3blocks
-    position top
-    font pango:Open Sans, FontAwesome 16
+# bar {
+#     # status_command ~/.i3/i3status_wrapper.sh
+#     status_command i3blocks
+#     position top
+#     font pango:Sans, FontAwesome 16
 
-    colors {
-         background #1d2021
-         statusline #e4e4e4
-         separator #333333
+#     colors {
+#          background #1d2021
+#          statusline #e4e4e4
+#          separator #333333
 
-                            #border backgr. text
-         focused_workspace  #83a598 #83a598 #ebdbb2
-         active_workspace   #ebdbb2 #ebdbb2 #1d2021
-         inactive_workspace #282828 #282828 #ebdbb2
-         urgent_workspace   #fb4934 #fb4934 #ebdbb2
-    }
-}
+#                             #border backgr. text
+#          focused_workspace  #83a598 #83a598 #ebdbb2
+#          active_workspace   #ebdbb2 #ebdbb2 #1d2021
+#          inactive_workspace #282828 #282828 #ebdbb2
+#          urgent_workspace   #fb4934 #fb4934 #ebdbb2
+#     }
+# }
+exec --no-startup-id systemd-run --user --slice polybar /usr/bin/polybar top-bar
+exec --no-startup-id systemd-run --user --slice polybar /usr/bin/polybar left-bar
 
 # Application window customization
 for_window [title="^Google Hangouts is sharing.*$"] floating enable
@@ -193,12 +242,15 @@ for_window [title="TeamViewer Panel"] floating enable, move absolute position 90
 for_window [title="TeamViewer"] floating enable, move absolute position 0 px 0 px
 for_window [class="feh"] floating enable
 for_window [class="Thunar"] floating enable
+for_window [class="Qalculate"] floating enable
+for_window [class="Chromium" instance="^chromium \(/tmp/.org.chromium.Chromium.*\)$"] floating enable, resize set 960 px 1080 px, move absolute position 960px 0px
 # bind workspaces to screens
-workspace $tag1 output HDMI-0
-workspace $tag2 output HDMI-0
-workspace $tag3 output DVI-D-0
-workspace $tag4 output DVI-D-0
-workspace $tag5 output DVI-D-0
+workspace 1 output HDMI-0
+workspace 2 output HDMI-0
+workspace 3 output DVI-D-0
+workspace 4 output DVI-D-0
+workspace 5 output DVI-D-0
 
-exec --no-startup-id i3-msg 'workspace 1: code; exec termite'
-exec --no-startup-id i3-msg 'workspace 4: chat; exec chromium --disable-gpu --app=https://tryadhawk.slack.com/messages'
+exec --no-startup-id i3-msg 'workspace 1; exec urxvt'
+exec --no-startup-id i3-msg 'workspace 4; exec chromium --app=https://tryadhawk.slack.com/messages'
+exec --no-startup-id i3-msg 'workspace 2; exec chromium --app=https://soundcloud.com/stream'

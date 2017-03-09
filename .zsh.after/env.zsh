@@ -14,8 +14,8 @@ alias vim='nvim'
 [ -f "/usr/share/nvm/init-nvm.sh" ] && source /usr/share/nvm/init-nvm.sh
 
 # FZF
-export PATH="$HOME/.fzf/bin:$PATH"
-export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden --follow --glob "!.git/*"'
+export PATH="$HOME/.fzf/bin:$HOME/.luarocks/bin:$PATH"
+export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden --follow --glob "!.git/*" --threads 4'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 

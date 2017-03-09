@@ -15,9 +15,13 @@ autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 
 let g:ycm_semantic_triggers['typescript'] = ['.']
+let g:ycm_semantic_triggers['rust'] = ['.']
 
 let g:ycm_filetype_specific_completion_to_disable = {
       \ 'gitcommit': 1,
       \ 'markdown': 1,
       \ 'liquid': 1
       \}
+
+let g:ycm_rust_src_path = '/home/ianks/.multirust/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src'
+

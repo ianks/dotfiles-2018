@@ -1,5 +1,5 @@
 [options]
-font = Fira Mono for Powerline 14
+font = Fira Mono for Powerline 13
 scroll_on_output = false
 scroll_on_keystroke = true
 audible_bell = false

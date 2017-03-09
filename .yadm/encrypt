@@ -2,3 +2,4 @@
 .gnupg/*.gpg
 .mutt/personal
 .mutt/work
+.secrets
