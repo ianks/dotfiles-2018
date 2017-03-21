@@ -8,3 +8,4 @@ let g:syntastic_scss_checkers = ['sass', 'sass_lint']
 let g:syntastic_scss_sass_lint_post_args = "--config /home/ianks/Dropbox/Development/work/techstars/companies/adhawk/the-power/config/sass-lint.yml"
 let g:syntastic_lua_checkers = ["luac", "luacheck"]
 let g:syntastic_lua_luacheck_args = "--globals ngx --no-unused-args"
+let g:syntastic_sh_shellcheck_args = "-x"
