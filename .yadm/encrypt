@@ -3,3 +3,4 @@
 .mutt/personal
 .mutt/work
 .secrets
+.aws/*
