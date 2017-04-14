@@ -320,6 +320,9 @@ syn keyword ngxDirective ssl_session_cache
 syn keyword ngxDirective ssl_session_timeout
 syn keyword ngxDirective ssl_verify_client
 syn keyword ngxDirective ssl_verify_depth
+syn keyword ngxDirective ssl_stapling
+syn keyword ngxDirective ssl_stapling_verify_on
+syn keyword ngxDirective ssl_trusted_certificate
 syn keyword ngxDirective starttls
 syn keyword ngxDirective stub_status
 syn keyword ngxDirective sub_filter

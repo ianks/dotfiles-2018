@@ -79,3 +79,5 @@ alias sysd='systemctl'
 alias tserrorfiles="tsc | grep -oP '^[A-z].*\(' | sed 's/.$//'"
 alias slack='systemd-run --user chromium --app=https://tryadhawk.slack.com/messages'
 alias dc='docker-compose'
+
+alias tsc-extract-files="grep --color=never -oP '(.*\.tsx?)'"

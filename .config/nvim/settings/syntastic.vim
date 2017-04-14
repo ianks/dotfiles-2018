@@ -1,4 +1,5 @@
 let g:syntastic_typescript_checkers = ['tsuquyomi', 'tslint']
+let g:syntastic_javascript_checkers = ['flow', 'eslint']
 let g:syntastic_ruby_checkers = ['rubocop', 'mri']
 let g:syntastic_yaml_checkers = ['yamllint']
 let g:syntastic_always_populate_loc_list = 1
@@ -8,4 +9,5 @@ let g:syntastic_scss_checkers = ['sass', 'sass_lint']
 let g:syntastic_scss_sass_lint_post_args = "--config /home/ianks/Dropbox/Development/work/techstars/companies/adhawk/the-power/config/sass-lint.yml"
 let g:syntastic_lua_checkers = ["luac", "luacheck"]
 let g:syntastic_lua_luacheck_args = "--globals ngx --no-unused-args"
+let g:syntastic_ruby_rubocop_args = "--force-exclusion"
 let g:syntastic_sh_shellcheck_args = "-x"
