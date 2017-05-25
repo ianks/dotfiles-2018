@@ -229,7 +229,7 @@ hide_edge_borders smart
 #          urgent_workspace   #fb4934 #fb4934 #ebdbb2
 #     }
 # }
-exec --no-startup-id systemd-run --user --slice polybar /usr/bin/polybar top-bar
+exec --no-startup-id systemd-run --user --slice polybar /usr/bin/polybar right-bar
 exec --no-startup-id systemd-run --user --slice polybar /usr/bin/polybar left-bar
 
 # Application window customization

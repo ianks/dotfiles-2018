@@ -11,3 +11,4 @@ let g:syntastic_lua_checkers = ["luac", "luacheck"]
 let g:syntastic_lua_luacheck_args = "--globals ngx --no-unused-args"
 let g:syntastic_ruby_rubocop_args = "--force-exclusion"
 let g:syntastic_sh_shellcheck_args = "-x"
+let g:syntastic_markdown_checkers= ['proselint', 'mdlint']

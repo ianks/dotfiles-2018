@@ -5,4 +5,3 @@
 :benchmark: false
 :backtrace: false
 :verbose: true
-gem: --no-rdoc
