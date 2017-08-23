@@ -12,7 +12,7 @@ let g:neoformat_typescript_tslint = {
             \ 'no_append': 1,
             \ }
 
-let g:neoformat_enabled_typescript = ['tslint']
+let g:neoformat_enabled_typescript = ['prettier']
 
 nnoremap <leader>ff :Neoformat<CR>
 autocmd FileType typescript nmap <buffer> <Leader>cr <Plug>(TsuquyomiRenameSymbolC)

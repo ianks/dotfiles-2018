@@ -1,5 +1,7 @@
 #!/usr/bin/env sh
 
+export XDG_RUNTIME_DIR=/run/user/$UID
+
 source_xinitrc_local() {
     [ -f $HOME/.xinitrc.local ] && source $HOME/.xinitrc.local
 }

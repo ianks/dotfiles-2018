@@ -76,6 +76,10 @@ monitor = ${env:MONITOR_RIGHT:DVI-D-0}
 modules-right = cpu memory wlan volume battery backlight date
 tray-position = right
 
+[bar/single]
+inherit = section/base
+modules-right = cpu memory wlan volume battery backlight date
+
 [bar/left-bar]
 inherit = section/base
 monitor = ${env:MONITOR_LEFT:HDMI-0}

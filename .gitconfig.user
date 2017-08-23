@@ -11,7 +11,6 @@
 
 [alias]
   fixup = !sh -c 'git commit --fixup=$1' -
-  squash = !sh -c 'git commit --squash=$1' -
   ri = rebase --interactive --autosquash
 
 [rebase]

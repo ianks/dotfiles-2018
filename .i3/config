@@ -234,12 +234,8 @@ exec --no-startup-id systemd-run --user --slice polybar /usr/bin/polybar left-ba
 
 # Application window customization
 for_window [title="^Google Hangouts is sharing.*$"] floating enable
-for_window [class="TeamViewer.exe"] floating enable
 for_window [class="Wine"] floating enable
 for_window [title="Steam - Update News"] floating enable
-for_window [title="TeamViewer Panel (minimized)"] floating enable, move absolute position 900 px 0 px
-for_window [title="TeamViewer Panel"] floating enable, move absolute position 900 px 0 px
-for_window [title="TeamViewer"] floating enable, move absolute position 0 px 0 px
 for_window [class="feh"] floating enable
 for_window [class="Thunar"] floating enable
 for_window [class="Qalculate"] floating enable

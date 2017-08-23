@@ -51,6 +51,7 @@
 	# credit the commit (git credit some_persons_name)
 	credit = !sh -c 'git commit --amend --author \"$1\" -C HEAD' -
 	root = rev-parse --show-toplevel
+	squash = "!f(){ CUR=`git rev-parse HEAD` && git reset --soft ${1} && git commit -m \"$(git log --format=%B ${1}..${CUR})\"; };f"
 [format]
 	pretty = format:%C(blue)%ad%Creset %C(yellow)%h%C(green)%d%Creset %C(blue)%s %C(magenta) [%an]%Creset
 
@@ -98,5 +99,5 @@
 [include]
 	path = .gitconfig.user
 [pager]
-	show = diff-so-fancy | less --tabs=1,5 -RFX
-	diff = diff-so-fancy | less --tabs=1,5 -RFX
+	; show = diff-so-fancy | less --tabs=1,5 -RFX
+	; diff = diff-so-fancy | less --tabs=1,5 -RFX
