@@ -54,13 +54,16 @@ Xft.lcdfilter: lcddefault
 ! Misc
 
 ! Note: the fallback font is for unicode
-URxvt.letterSpace: -1
-URxvt.font: xft:Fira \Mono \for \Powerline:pixelsize=16, -Misc-Fixed-Medium-R-SemiCondensed--13-120-75-75-C-60-ISO10646-1
+URxvt.letterSpace: -2
+URxvt.font: xft:Fira \Mono \for \Powerline:pixelsize=16,xft:Fira \Mono \for \Powerline:pixelsize=16,-Misc-Fixed-Medium-R-SemiCondensed--13-120-75-75-C-60-ISO10646-1
 URxvt.scrollBar: false
 URxvt.saveLines: 16384
 
+
 ! Cut and paste
-URxvt.perl-ext-common: default,clipboard
+URxvt.perl-ext-common: default,clipboard,url-select,keyboard-select
+URxvt.url-select.launcher: chromium
+URxvt.url-select.underline: true
 URxvt.iso14755: False
 URxvt.keysym.Shift-Control-C: perl:clipboard:copy
 URxvt.keysym.Shift-Control-V: perl:clipboard:paste

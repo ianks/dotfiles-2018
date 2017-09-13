@@ -59,7 +59,7 @@ height = 32
 offset-x = 0
 offset-y = 0
 background = ${colors.dark0}
-foreground = ${colors.light0}
+foreground = ${colors.light4}
 spacing = 1
 padding-left = 1
 padding-right = 0
@@ -70,19 +70,19 @@ font-1 = SourceSansPro:size=10;0
 font-2 = Material Design Icons:size=13;0
 modules-left = i3
 
-[bar/right-bar]
-inherit = section/base
-monitor = ${env:MONITOR_RIGHT:DVI-D-0}
-modules-right = cpu memory wlan volume battery backlight date
-tray-position = right
-
 [bar/single]
 inherit = section/base
 modules-right = cpu memory wlan volume battery backlight date
 
-[bar/left-bar]
+[bar/right-bar]
 inherit = section/base
 monitor = ${env:MONITOR_LEFT:HDMI-0}
+modules-right = cpu memory wlan volume battery backlight date
+tray-position = right
+
+[bar/left-bar]
+inherit = section/base
+monitor = ${env:MONITOR_RIGHT:DVI-D-0}
 
 [module/rofi]
 type = custom/text
@@ -98,9 +98,9 @@ label-mode-background = ${colors.dark0}
 label-mode-foreground = ${colors.faded_orange}
 label-mode-padding = 0
 label-focused-font = 3
-label-unfocused-font = 3
-label-urgent-font = 3
-label-visible-font = 3
+label-unfocused-font = 1
+label-urgent-font = 1
+label-visible-font = 1
 ws-icon-0 = 1;
 ws-icon-1 = 2;
 ws-icon-2 = 3;
@@ -112,8 +112,8 @@ ws-icon-7 = 8;
 ws-icon-8 = 9;
 ws-icon-9 = 10;
 label-focused = %icon%
-label-focused-background = ${colors.neutral_orange}
-label-focused-foreground = ${colors.dark1}
+label-focused-background = ${colors.dark0}
+label-focused-foreground = ${colors.light0}
 label-focused-padding = 1
 label-unfocused = %icon%
 label-unfocused-padding = 1
@@ -137,7 +137,7 @@ time = %H:%M
 interval = 5
 format-font =3
 format-background = ${colors.dark2}
-format-foreground = ${colors.light2}
+format-foreground = ${colors.light3}
 format-padding = 1
 
 [module/battery]
