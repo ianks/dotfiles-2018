@@ -207,10 +207,6 @@ exec --no-startup-id nitrogen --restore
 # No borders on edges
 hide_edge_borders smart
 
-# polybar
-exec --no-startup-id systemd-run --user --slice polybar /usr/bin/polybar right-bar
-exec --no-startup-id systemd-run --user --slice polybar /usr/bin/polybar left-bar
-
 # slack scratchpad
 for_window [class="Slack" title="Slack - AdHawk"] move to scratchpad
 bindsym mod1+Shift+s [class="Slack" title="Slack - AdHawk"] scratchpad show
