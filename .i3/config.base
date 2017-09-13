@@ -219,7 +219,7 @@ exec --no-startup-id systemd-run --user --slice adhawk /usr/bin/chromium --app=h
 
 # calendar scratchpad
 for_window [title="adHawk - Calendar" window_role="pop-up"] move to scratchpad
-bindsym mod1+Shift+c [title="adHawk - Calendar" window_role="pop-up"] scratchpad show
+bindsym mod1+Shift+c [instance="calendar.google.com__calendar_b_1_render" window_role="pop-up"] scratchpad show
 exec --no-startup-id systemd-run --user --slice adhawk /usr/bin/chromium --app=https://calendar.google.com/calendar/b/1/render
 
 # Application window customization
