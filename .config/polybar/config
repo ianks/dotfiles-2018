@@ -76,13 +76,13 @@ modules-right = cpu memory wlan volume battery backlight date
 
 [bar/right-bar]
 inherit = section/base
-monitor = ${env:MONITOR_RIGHT:HDMI-0}
+monitor = ${env:MONITOR_LEFT:HDMI-0}
 modules-right = cpu memory wlan volume battery backlight date
 tray-position = right
 
 [bar/left-bar]
 inherit = section/base
-monitor = ${env:MONITOR_LEFT:DVI-D-0}
+monitor = ${env:MONITOR_RIGHT:DVI-D-0}
 
 [module/rofi]
 type = custom/text

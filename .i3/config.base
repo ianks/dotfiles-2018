@@ -74,7 +74,7 @@ floating_modifier $mod
 bindsym $mod+Return exec --no-startup-id urxvt
 
 # start a browser
-bindsym $mod+b exec --no-startup-id chromium
+bindsym $mod+b exec --no-startup-id firefox-developer
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -217,10 +217,14 @@ for_window [title="Current Sprint | Trello" window_role="pop-up"] move to scratc
 bindsym mod1+Shift+t [title="Current Sprint | Trello" window_role="pop-up"] scratchpad show
 exec --no-startup-id systemd-run --user --slice adhawk /usr/bin/chromium --app=https://trello.com/b/5NYmaTmt/current-sprint
 
+# spotify scratchpad
+for_window [class="Spotify" instance="spotify"] move to scratchpad
+bindsym mod1+Shift+m [class="Spotify" instance="spotify"] scratchpad show
+
 # calendar scratchpad
-for_window [instance="calendar.google.com__calendar_b_1_render" window_role="pop-up"] move to scratchpad
-bindsym mod1+Shift+c [instance="calendar.google.com__calendar_b_1_render" window_role="pop-up"] scratchpad show
-exec --no-startup-id systemd-run --user --slice adhawk /usr/bin/chromium --app=https://calendar.google.com/calendar/b/1/render
+for_window [class="Chromium" instance="calendar.google.com__calendar_b_0_render" window_role="pop-up"] move to scratchpad
+bindsym mod1+Shift+c [class="Chromium" instance="calendar.google.com__calendar_b_0_render" window_role="pop-up"] scratchpad show
+exec --no-startup-id systemd-run --user --slice adhawk /usr/bin/chromium --app=https://calendar.google.com/calendar/b/0/render
 
 # Application window customization
 for_window [title="^Google Hangouts is sharing.*$"] floating enable

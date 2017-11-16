@@ -1,10 +1,3 @@
-#
-# Executes commands at the start of an interactive session.
-#
-# Authors:
-#   Sorin Ionescu <sorin.ionescu@gmail.com>
-#
-
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
@@ -14,3 +7,17 @@ fi
 for config_file ($HOME/.yadr/cli/zsh/*.zsh) source $config_file
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# === zgen ==== #
+[ ! -d  "${HOME}/.zgen" ] && git clone https://github.com/tarjoilija/zgen.git "${HOME}/.zgen"
+
+source "${HOME}/.zgen/zgen.zsh"
+
+if ! zgen saved; then
+  # specify plugins here
+  zgen load uvaes/fzf-marks
+
+  # generate the init script from plugins above
+  zgen save
+fi
+

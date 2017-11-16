@@ -1,5 +1,5 @@
 let g:test#strategy = 'neovim'
-let g:test#javascript#mocha#file_pattern = '\vtests?/.*\.(ts|tsx|js|jsx|coffee)$'
+let g:test#javascript#mocha#file_pattern = '\v.*(Test|\.spec)\.(ts|tsx|js|jsx|coffee)$'
 
 let test#javascript#mocha#options = {
   \ 'nearest': '--reporter spec',
