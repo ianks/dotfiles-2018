@@ -38,9 +38,19 @@ dotfeh() {
 }
 
 instanceip() {
-  aws ec2 describe-instances --region us-west-1 --instance-ids $1 \
+  instance_id="$1"
+
+  if ! [[ "$instance_id" =~ "^i-.*" ]]; then
+    instance_id="i-$instance_id"
+  fi
+
+  aws ec2 describe-instances --region us-west-1 --instance-ids "$instance_id" \
     | grep PublicIpAddress \
     | awk -F ":" '{print $2}' \
     | sed 's/[",]//g' \
     | sed 's/^ //g'
+}
+
+ssh-instance () {
+  ssh -i ~/.ssh/aws-eb ec2-user@$(instanceip "$1")
 }

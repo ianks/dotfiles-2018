@@ -106,9 +106,18 @@ nnoremap <C-H> <C-W><C-H>
 
 source ~/.config/nvim/settings.vim
 
+command! -bang -nargs=* Rg
+  \ call fzf#vim#grep(
+  \   'rg --column --line-number --no-heading --color=always '.shellescape(<q-args>), 1,
+  \   <bang>0 ? fzf#vim#with_preview('up:60%')
+  \           : fzf#vim#with_preview('right:50%:hidden', '?'),
+  \   <bang>0)
+
+
 " ================ Auto-source config changes  ===========
 
-autocmd! bufwritepost init.vim source %
+autocmd! BufWritePost init.vim source %
+autocmd! BufWritePost plugs.vim source % | PlugUpgrade | PlugClean! | PlugInstall
 
 " ================ Override ========================
 

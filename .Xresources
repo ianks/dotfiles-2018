@@ -55,7 +55,7 @@ Xft.lcdfilter: lcddefault
 
 ! Note: the fallback font is for unicode
 URxvt.letterSpace: -2
-URxvt.font: xft:Fira \Mono \for \Powerline:pixelsize=16,xft:Fira \Mono \for \Powerline:pixelsize=16,-Misc-Fixed-Medium-R-SemiCondensed--13-120-75-75-C-60-ISO10646-1
+URxvt.font: xft:Source \Code \Pro \for \Powerline:pixelsize=17,xft:Fira \Mono \for \Powerline:pixelsize=16,-Misc-Fixed-Medium-R-SemiCondensed--13-120-75-75-C-60-ISO10646-1
 URxvt.scrollBar: false
 URxvt.saveLines: 16384
 

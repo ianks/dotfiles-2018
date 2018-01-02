@@ -74,7 +74,7 @@ floating_modifier $mod
 bindsym $mod+Return exec --no-startup-id urxvt
 
 # start a browser
-bindsym $mod+b exec --no-startup-id firefox-developer
+bindsym $mod+b exec --no-startup-id firefox-developer-edition
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -198,8 +198,8 @@ bindsym $mod+minus scratchpad show
 # Compositor
 exec --no-startup-id systemd-run --user compton --config ~/.config/compton.conf
 
-# Notifications
-exec --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd
+# Auto mount usb drives
+exec --no-startup-id systemd-run --user udiskie
 
 # Wallpaper
 exec --no-startup-id nitrogen --restore
@@ -230,7 +230,7 @@ exec --no-startup-id systemd-run --user --slice adhawk /usr/bin/chromium --app=h
 for_window [title="^Google Hangouts is sharing.*$"] floating enable
 for_window [title="pinentry"] floating enable
 for_window [title="NVIDIA X Server Settings"] floating enable
-for_window [title="Enpass"] floating enable
+for_window [class="Enpass-Desktop"] floating enable
 for_window [title="pinentry"] floating enable
 for_window [class="TeamViewer.exe"] floating enable
 for_window [class="Wine"] floating enable

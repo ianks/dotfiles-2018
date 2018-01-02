@@ -1,6 +1,0 @@
-Plug 'bootleq/vim-textobj-rubysymbol', { 'for': 'ruby' }
-Plug 'coderifous/textobj-word-column.vim'
-Plug 'kana/vim-textobj-user'
-Plug 'nelstrom/vim-textobj-rubyblock', { 'for': 'ruby' }
-Plug 'ntpeters/vim-better-whitespace'
-Plug 'thinca/vim-textobj-function-javascript', { 'for': 'javascript' }
