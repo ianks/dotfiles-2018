@@ -21,3 +21,8 @@ if ! zgen saved; then
   zgen save
 fi
 
+
+# added by travis gem
+[ -f /home/ianks/.travis/travis.sh ] && source /home/ianks/.travis/travis.sh
+
+export PATH="$PATH:/home/ianks/.cargo/bin"

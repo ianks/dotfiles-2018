@@ -163,3 +163,4 @@ zstyle ':prezto:module:tmux:auto-start' remote 'no'
 
 # Pacman
 zstyle ':prezto:module:pacman' frontend 'yaourt'
+

@@ -1,7 +1,7 @@
 au FileType mkd setlocal spell linebreak nolist
 
 let g:vim_markdown_frontmatter=1
-let g:markdown_fenced_languages = ['ruby', 'html', 'javascript', 'css', 'erb=eruby.html','bash=sh', 'sh', 'python']
+let g:markdown_fenced_languages = ['ruby', 'html', 'javascript', 'typescript', 'json', 'css', 'erb=eruby.html','bash=sh', 'sh', 'python']
 
 function! s:TableFormat()
     let l:pos = getpos('.')
@@ -16,5 +16,7 @@ function! s:TableFormat()
     s/ /-/g
     call setpos('.', l:pos)
 endfunction
+
+autocmd FileType markdown :AsyncRun octodown %
 
 command! -buffer TableFormat call s:TableFormat()

@@ -7,6 +7,11 @@ let test#javascript#mocha#options = {
   \ 'suite':   '--reporter dot test/**/*Test.*',
   \}
 
+" let test#ruby#rspec#options = {
+"   \ 'file':    '--options /dev/null --color --require spec_helper --require acceptance_helper',
+"   \}
+let $MINITEST_REPORTER = 'ProgressReporter'
+
 nnoremap <silent> <leader>tn :TestNearest<CR>
 nnoremap <silent> <leader>tf :TestFile<CR>
 nnoremap <silent> <leader>ta :TestSuite<CR>

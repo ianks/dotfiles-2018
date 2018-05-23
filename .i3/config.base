@@ -213,13 +213,17 @@ bindsym mod1+Shift+s [class="Slack" title="Slack - AdHawk"] scratchpad show
 exec --no-startup-id systemd-run --user --slice adhawk /usr/bin/slack
 
 # trello scratchpad
-for_window [title="Current Sprint | Trello" window_role="pop-up"] move to scratchpad
-bindsym mod1+Shift+t [title="Current Sprint | Trello" window_role="pop-up"] scratchpad show
-exec --no-startup-id systemd-run --user --slice adhawk /usr/bin/chromium --app=https://trello.com/b/5NYmaTmt/current-sprint
+for_window [title="WEB board - Agile Board - Jira" window_role="pop-up"] move to scratchpad
+bindsym mod1+Shift+t [title="WEB board - Agile Board - Jira" window_role="pop-up"] scratchpad show
+exec --no-startup-id systemd-run --user --slice adhawk /usr/bin/chromium --app=https://adhawk.atlassian.net/secure/RapidBoard.jspa?rapidView=4&projectKey=WEB
+
+# enpass
+exec --no-startup-id systemd-run --user --slice adhawk /usr/bin/enpass
 
 # spotify scratchpad
 for_window [class="Spotify" instance="spotify"] move to scratchpad
 bindsym mod1+Shift+m [class="Spotify" instance="spotify"] scratchpad show
+exec --no-startup-id systemd-run --user --slice adhawk /usr/bin/spotify
 
 # calendar scratchpad
 for_window [class="Chromium" instance="calendar.google.com__calendar_b_0_render" window_role="pop-up"] move to scratchpad
@@ -228,6 +232,7 @@ exec --no-startup-id systemd-run --user --slice adhawk /usr/bin/chromium --app=h
 
 # Application window customization
 for_window [title="^Google Hangouts is sharing.*$"] floating enable
+for_window [title="Slack Call Minipanel"] floating enable
 for_window [title="pinentry"] floating enable
 for_window [title="NVIDIA X Server Settings"] floating enable
 for_window [class="Enpass-Desktop"] floating enable
