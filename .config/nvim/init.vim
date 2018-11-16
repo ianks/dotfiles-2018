@@ -4,11 +4,30 @@ if filereadable(expand("~/.vimrc.before"))
   source ~/.vimrc.before
 endif
 
+if exists('g:gui_oni')
+  set nocompatible              " be iMproved, required
+  filetype off                  " required
+
+  set number
+  set noswapfile
+  set smartcase
+
+  " Enable GUI mouse behavior
+  set mouse=a
+
+  " If using Oni's externalized statusline, hide vim's native statusline,
+  set noshowmode
+  set noruler
+  set laststatus=0
+  set noshowcmd
+else
+  set gcr=a:blinkon0              " Disable cursor blink
+  set showmode                    " Show current mode down the bottom
+endif
+
 " ================ General Config ====================
 
 set number                      " Line numbers are good
-set showmode                    " Show current mode down the bottom
-set gcr=a:blinkon0              " Disable cursor blink
 set visualbell                  " No sounds
 set autoread                    " Refresh files automatically
 set confirm

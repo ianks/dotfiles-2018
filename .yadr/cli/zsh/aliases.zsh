@@ -29,6 +29,7 @@ alias :q='exit'
 
 # vimrc editing
 alias ve='vim ~/.vimrc'
+alias v='nvim'
 
 # zsh profile editing
 alias ze='vim ~/.zshrc'
@@ -53,6 +54,7 @@ alias k9='kill -9'
 alias ..='cd ..'
 alias sr='spring rspec'
 alias src='spring rails console'
+alias hc='be hanami console'
 alias be='bundle exec'
 alias pyclean='find . -name "*.pyc" -print0 | xargs -0 rm'
 alias brewu='brew update && brew upgrade && brew cleanup && brew prune && brew doctor'
@@ -64,7 +66,6 @@ alias genpw='openssl rand -base64 18'
 alias yadr='cd ~/.yadr'
 alias x='startx'
 alias c='ccat'
-alias v='nvim'
 alias tailstaging='ssh deploy@staging.adhawk-api.com -C "tail -f ~/adhawk/shared/log/staging.log"'
 alias taildashboard='ssh dashboard -C "tail -f /var/log/nginx/error.log"'
 alias mailinglist='ssh ah-mailing-list -C "cat /tmp/mailing_list.yml"'
@@ -75,3 +76,4 @@ alias dc='docker-compose'
 
 alias tsc-extract-files="grep --color=never -oP '(.*\.tsx?)'"
 alias e="exa"
+alias open="xdg-open"

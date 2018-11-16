@@ -26,3 +26,14 @@ fi
 [ -f /home/ianks/.travis/travis.sh ] && source /home/ianks/.travis/travis.sh
 
 export PATH="$PATH:/home/ianks/.cargo/bin"
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /home/ianks/.nvm/versions/node/v9.3.0/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /home/ianks/.nvm/versions/node/v9.3.0/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /home/ianks/.nvm/versions/node/v9.3.0/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /home/ianks/.nvm/versions/node/v9.3.0/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
+neofetch
+# added by tile
+[ -f /home/ianks/.tile/completions/completions.zsh ] && source /home/ianks/.tile/completions/completions.zsh
+# end tile

@@ -74,7 +74,7 @@ floating_modifier $mod
 bindsym $mod+Return exec --no-startup-id kitty
 
 # start a browser
-bindsym $mod+b exec --no-startup-id firefox-developer-edition
+bindsym $mod+b exec --no-startup-id $BROWSER
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -214,7 +214,7 @@ exec --no-startup-id systemd-run --user --slice adhawk /usr/bin/slack
 
 # trello scratchpad
 for_window [title="WEB board - Agile Board - Jira" window_role="pop-up"] move to scratchpad
-bindsym mod1+Shift+t [title="WEB board - Agile Board - Jira" window_role="pop-up"] scratchpad show
+bindsym mod1+Shift+j [title="WEB board - Agile Board - Jira" window_role="pop-up"] scratchpad show
 exec --no-startup-id systemd-run --user --slice adhawk /usr/bin/chromium --app=https://adhawk.atlassian.net/secure/RapidBoard.jspa?rapidView=4&projectKey=WEB
 
 # enpass
@@ -230,9 +230,10 @@ for_window [class="Chromium" instance="calendar.google.com__calendar_b_0_render"
 bindsym mod1+Shift+c [class="Chromium" instance="calendar.google.com__calendar_b_0_render" window_role="pop-up"] scratchpad show
 exec --no-startup-id systemd-run --user --slice adhawk /usr/bin/chromium --app=https://calendar.google.com/calendar/b/0/render
 
-# Application window customization
+for_window [title="^data:,.*$" window_role="browser"] floating enable
 for_window [title="^Google Hangouts is sharing.*$"] floating enable
 for_window [title="Slack Call Minipanel"] floating enable
+for_window [title="Zoom - Pro Account"] floating enable
 for_window [title="pinentry"] floating enable
 for_window [title="NVIDIA X Server Settings"] floating enable
 for_window [class="Enpass-Desktop"] floating enable

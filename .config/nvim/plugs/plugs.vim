@@ -4,6 +4,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'shinchu/lightline-gruvbox.vim'
 Plug 'mattn/gist-vim'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-git'
 Plug 'tpope/vim-markdown'
 Plug 'w0rp/ale'
@@ -13,8 +14,16 @@ Plug 'justinmk/vim-syntax-extra'
 Plug 'mattn/emmet-vim'
 Plug 'leafgarland/typescript-vim'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'Shougo/neosnippet.vim'
+Plug 'honza/vim-snippets'
 Plug 'ianks/vim-tsx'
-Plug 'mhartington/nvim-typescript'
+if !exists('g:gui_oni')
+  " Plug 'mhartington/nvim-typescript', {'for': ['typescript', 'tsx'], 'do': './install.sh' }
+end
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' }
 Plug 'ElmCast/elm-vim'
@@ -32,7 +41,6 @@ Plug 'tpope/vim-bundler', { 'for': 'ruby' }
 Plug 'tpope/vim-rails', { 'for': 'ruby' }
 Plug 'tpope/vim-rake', { 'for': 'ruby' }
 Plug 'tpope/vim-rbenv', { 'for': 'ruby' }
-Plug 'danchoi/ri.vim', { 'for': 'ruby' }
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 Plug 'bootleq/vim-textobj-rubysymbol', { 'for': 'ruby' }
 Plug 'coderifous/textobj-word-column.vim'
@@ -81,3 +89,7 @@ Plug 'machakann/vim-highlightedyank'
 " Plug 'uplus/deoplete-solargraph'
 " Plug '~/Development/nvim/deoplete-solargraph'
 Plug 'skywind3000/asyncrun.vim'
+Plug 'wfleming/vim-codeclimate'
+" Plug 'vim-terraform'
+Plug 'hjson/vim-hjson'
+Plug 'ianks/vim-ruby-heredoc-syntax'

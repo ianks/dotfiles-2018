@@ -1,17 +1,8 @@
-if exists('b:current_syntax')
-  let s:current_syntax=b:current_syntax
-  unlet b:current_syntax
-endif
+let s:current_syntax=b:current_syntax
+unlet b:current_syntax
 
 syn include @XMLSyntax syntax/xml.vim
-unlet b:current_syntax
-
 syn include @GQLSyntax syntax/graphql.vim
-unlet b:current_syntax
-
-if exists('s:current_syntax')
-  let b:current_syntax=s:current_syntax
-endif
 
 syn region xmlTemplateTag
       \ contains=@XMLSyntax
@@ -24,3 +15,5 @@ syn region gqlTemplateTag
       \ start=+gql`+
       \ end=+`+
       \ extend
+
+let b:current_syntax=s:current_syntax
