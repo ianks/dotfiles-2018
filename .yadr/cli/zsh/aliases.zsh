@@ -55,7 +55,9 @@ alias ..='cd ..'
 alias sr='spring rspec'
 alias src='spring rails console'
 alias hc='be hanami console'
+alias hs='be hanami server'
 alias be='bundle exec'
+alias rs='bundle exec rspec'
 alias pyclean='find . -name "*.pyc" -print0 | xargs -0 rm'
 alias brewu='brew update && brew upgrade && brew cleanup && brew prune && brew doctor'
 alias aptu='sudo apt-get update && sudo apt-get dist-upgrade && sudo apt-get autoremove'
@@ -77,3 +79,4 @@ alias dc='docker-compose'
 alias tsc-extract-files="grep --color=never -oP '(.*\.tsx?)'"
 alias e="exa"
 alias open="xdg-open"
+alias ergo="xdg-open https://configure.ergodox-ez.com/layouts/3M7B/latest/0"

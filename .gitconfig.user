@@ -24,3 +24,8 @@
 
 [url "ssh://git@gitlab.com/"]
   insteadOf = https://gitlab.com/
+
+[diff]
+    tool = default-difftool
+[difftool "default-difftool"]
+    cmd = code --wait --diff $LOCAL $REMOTE

@@ -4,12 +4,13 @@ if filereadable(expand("~/.vimrc.before"))
   source ~/.vimrc.before
 endif
 
+set noswapfile
+
 if exists('g:gui_oni')
   set nocompatible              " be iMproved, required
   filetype off                  " required
 
   set number
-  set noswapfile
   set smartcase
 
   " Enable GUI mouse behavior
