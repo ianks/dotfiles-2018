@@ -4,7 +4,13 @@ if filereadable(expand("~/.vimrc.before"))
   source ~/.vimrc.before
 endif
 
+set shell=/bin/sh
+
 set noswapfile
+
+if has('nvim')
+  autocmd TermOpen term://* startinsert
+endif
 
 if exists('g:gui_oni')
   set nocompatible              " be iMproved, required

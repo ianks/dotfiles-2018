@@ -54,3 +54,13 @@ instanceip() {
 ssh-instance () {
   ssh -i ~/.ssh/aws-eb ec2-user@$(instanceip "$1")
 }
+
+rg-github() {
+  local repodir
+  repo_dir="/tmp/rg-github/$2"
+  mkdir -p "$repo_dir"
+  pushd "$repo_dir"
+  git clone "$2" || true
+  rg "$1"
+  popd
+}

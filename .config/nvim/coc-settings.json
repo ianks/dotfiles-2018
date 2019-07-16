@@ -1,0 +1,39 @@
+{
+  "coc.preferences.formatOnSaveFiletypes": [
+    "css",
+    "markdown",
+    "scss",
+    "typescript",
+    "typescriptreact",
+    "javascript",
+    "javascriptreact",
+    "ruby",
+    "json",
+    "graphql"
+  ],
+  "solargraph.autoformat": true,
+  "solargraph.formatting": true,
+  "solargraph.diagnostics": true,
+  "suggest.autoTrigger": "always",
+  "suggest.minTriggerInputLength": 2,
+  "suggest.triggerAfterInsertEnter": true,
+  "typescript.suggest.autoImports": true,
+  "diagnostic-languageserver.filetypes": {
+    "markdown": ["write-good", "markdownlint"],
+    "sh": "shellcheck"
+  },
+  "json.format.enable": true,
+  "languageserver": {
+    "sh": {
+      "command": "bash-language-server",
+      "args": ["start"],
+      "filetypes": ["sh"],
+      "ignoredRootPaths": ["~"]
+    },
+    "dockerfile": {
+      "command": "docker-langserver",
+      "filetypes": ["dockerfile"],
+      "args": ["--stdio"]
+    }
+  }
+}

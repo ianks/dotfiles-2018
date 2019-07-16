@@ -7,7 +7,7 @@
 inoremap jk <esc>
 cnoremap jk <esc>
 if has('nvim')
-  tnoremap jk <C-\><C-n>
+  " tnoremap jk <C-\><C-n>
 endif
 
 " Stop pressing shift all the time

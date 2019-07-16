@@ -1,0 +1,16 @@
+snippet class class .. extend Dry::Initializer .. end
+	class ${1:`substitute(vim_snippets#Filename(), '\(_\|^\)\(.\)', '\u\2', 'g')`}
+                extend Dry::Initializer
+		${0}
+        end
+
+snippet option
+        option :${1:param_name}, default: -> { ${0:default_value} }
+
+snippet param
+        param :${1:param_name}, default: -> { ${0:default_value} }
+
+snippet RSpec
+	RSpec.describe ${1:`substitute(substitute(vim_snippets#Filename(), '_spec$', '', ''), '\(_\|^\)\(.\)', '\u\2', 'g')`} do
+		${0}
+        end
